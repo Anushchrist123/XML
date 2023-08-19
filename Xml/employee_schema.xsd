@@ -1,0 +1,50 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="employe_details">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="employee" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="title">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="lang" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Personal">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="fname"/>
+                    <xs:element type="xs:string" name="lname"/>
+                    <xs:element type="xs:string" name="DOB"/>
+                    <xs:element type="xs:string" name="Gender"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Employment">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="Position"/>
+                    <xs:element type="xs:int" name="Salary"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="contact">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="Email"/>
+                    <xs:element type="xs:long" name="Phone"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:int" name="id" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
